@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+dist/
+build/
+
+# Env folders
+.env
+.env.local
+
+# MacOS unnecessary folders
+.DS_Store
+
+# IDE settings
+.vscode/
+.idea/
+
+# Log folders
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
