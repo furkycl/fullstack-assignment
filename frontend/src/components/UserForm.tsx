@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import type { User } from "../types";
+import formStyles from "./Form.module.css";
+import btnStyles from "./Button.module.css";
 
 // Omit<User, 'id'>: User tipinden 'id'yi çıkar.
 type UserFormData = Omit<User, "id">;
@@ -46,76 +48,58 @@ const UserForm: React.FC<UserFormProps> = ({
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0,0,0,0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          backgroundColor: "white",
-          padding: "20px",
-          borderRadius: "5px",
-          width: "400px",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-        }}
-      >
+    <div className={formStyles.modalBackdrop}>
+      <form onSubmit={handleSubmit} className={formStyles.modalContent}>
         <h2>{currentUser ? "Edit User" : "Add New User"}</h2>
-        <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>Name:</label>
+
+        <div className={formStyles.formGroup}>
+          <label>Name:</label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            style={{ width: "95%", padding: "8px" }}
           />
         </div>
-        <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>
-            Username:
-          </label>
+
+        <div className={formStyles.formGroup}>
+          <label>Username:</label>
           <input
             type="text"
             name="username"
             value={formData.username}
             onChange={handleChange}
             required
-            style={{ width: "95%", padding: "8px" }}
           />
         </div>
-        <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>
-            Email:
-          </label>
+
+        <div className={formStyles.formGroup}>
+          <label>Email:</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             required
-            style={{ width: "95%", padding: "8px" }}
           />
         </div>
-        <div style={{ textAlign: "right" }}>
+
+        <div className={formStyles.formActions}>
           <button
             type="button"
             onClick={onCancel}
+            className={btnStyles.btn}
             style={{ marginRight: "10px" }}
           >
             Cancel
           </button>
-          <button type="submit">Save</button>
+          <button
+            type="submit"
+            className={`${btnStyles.btn} ${btnStyles.btnPrimary}`}
+          >
+            Save
+          </button>
         </div>
       </form>
     </div>
