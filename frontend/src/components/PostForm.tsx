@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import type { Post } from "../types";
+import formStyles from "./Form.module.css";
+import btnStyles from "./Button.module.css";
 
 // Form verisi için tip tanımı. id'yi dışarıda bırakıyoruz.
 type PostFormData = Omit<Post, "id">;
@@ -51,52 +53,34 @@ const PostForm: React.FC<PostFormProps> = ({
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0,0,0,0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          backgroundColor: "white",
-          padding: "20px",
-          borderRadius: "5px",
-          width: "400px",
-        }}
-      >
+    <div className={formStyles.modalBackdrop}>
+      <form onSubmit={handleSubmit} className={formStyles.modalContent}>
         <h2>{currentPost ? "Edit Post" : "Add New Post"}</h2>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Title: </label>
+
+        <div className={formStyles.formGroup}>
+          <label>Title:</label>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
             required
-            style={{ width: "95%" }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Body: </label>
+
+        <div className={formStyles.formGroup}>
+          <label>Body:</label>
           <textarea
             name="body"
             value={formData.body}
             onChange={handleChange}
             required
-            style={{ width: "95%", minHeight: "80px" }}
+            style={{ minHeight: "80px" }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>User ID: </label>
+
+        <div className={formStyles.formGroup}>
+          <label>User ID:</label>
           <input
             type="number"
             name="userId"
@@ -104,13 +88,25 @@ const PostForm: React.FC<PostFormProps> = ({
             onChange={handleChange}
             required
             min="1"
-            style={{ width: "95%" }}
           />
         </div>
-        <button type="submit">Save</button>
-        <button type="button" onClick={onCancel} style={{ marginLeft: "10px" }}>
-          Cancel
-        </button>
+
+        <div className={formStyles.formActions}>
+          <button
+            type="button"
+            onClick={onCancel}
+            className={btnStyles.btn}
+            style={{ marginRight: "10px" }}
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className={`${btnStyles.btn} ${btnStyles.btnPrimary}`}
+          >
+            Save
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { getPosts, createPost, updatePost, deletePost } from "../services/api";
 import type { Post } from "../types";
 import PostForm from "./PostForm";
+import listStyles from "./List.module.css";
+import btnStyles from "./Button.module.css";
 
 const PostList: React.FC = () => {
   // --- STATE YÖNETİMİ ---
@@ -93,49 +95,40 @@ const PostList: React.FC = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1 style={{ marginBottom: "20px" }}>Post Management</h1>
-      <Link to="/">Back to Home</Link>
+    <div>
+      <div className={listStyles.header}>
+        <h1>Post Management</h1>
+        <button
+          onClick={handleAddNewPost}
+          className={`${btnStyles.btn} ${btnStyles.btnPrimary}`}
+        >
+          Add New Post
+        </button>
+      </div>
+      <Link to="/">← Back to Home</Link>
 
-      <button
-        onClick={handleAddNewPost}
-        style={{ margin: "20px 0", padding: "10px 15px", cursor: "pointer" }}
-      >
-        Add New Post
-      </button>
-
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <ul className={listStyles.list} style={{ marginTop: "1rem" }}>
         {posts.map((post) => (
-          <li
-            key={post.id}
-            style={{
-              marginBottom: "10px",
-              border: "1px solid #ccc",
-              padding: "15px",
-              borderRadius: "5px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <div>
-                <strong>{post.title}</strong>
-                <br />
-                <small>User ID: {post.userId}</small>
-              </div>
-              <div>
-                <button
-                  onClick={() => handleEditPost(post)}
-                  style={{ marginRight: "10px" }}
-                >
-                  Edit
-                </button>
-                <button onClick={() => handleDelete(post.id)}>Delete</button>
-              </div>
+          <li key={post.id} className={listStyles.listItem}>
+            <div className={listStyles.itemContent}>
+              <strong>{post.title}</strong>
+              <br />
+              <small>User ID: {post.userId}</small>
+            </div>
+            <div>
+              <button
+                onClick={() => handleEditPost(post)}
+                className={btnStyles.btn}
+                style={{ marginRight: "10px" }}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete(post.id)}
+                className={`${btnStyles.btn} ${btnStyles.btnDanger}`}
+              >
+                Delete
+              </button>
             </div>
           </li>
         ))}
@@ -145,7 +138,7 @@ const PostList: React.FC = () => {
         <PostForm
           currentPost={editingPost}
           onSave={handleSavePost}
-          onCancel={handleCancel}
+          onCancel={() => setIsModalOpen(false)}
         />
       )}
     </div>
