@@ -1,0 +1,24 @@
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  color: white;
+}
+
+.btnPrimary {
+  background-color: var(--primary-color);
+}
+.btnPrimary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.btnDanger {
+  background-color: var(--danger-color);
+}
+.btnDanger:hover {
+  background-color: var(--danger-hover-color);
+}

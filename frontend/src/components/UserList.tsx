@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { getUsers, deleteUser, createUser, updateUser } from "../services/api";
 import type { User } from "../types";
 import UserForm from "./UserForm";
+import listStyles from "./List.module.css";
+import btnStyles from "./Button.module.css";
 
 const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -110,32 +112,22 @@ const UserList: React.FC = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1 style={{ marginBottom: "20px" }}>User Management</h1>
-      <Link to="/">Back to Home</Link>
+    <div>
+      <div className={listStyles.header}>
+        <h1>User Management</h1>
+        <button
+          onClick={handleAddNewUser}
+          className={`${btnStyles.btn} ${btnStyles.btnPrimary}`}
+        >
+          Add New User
+        </button>
+      </div>
+      <Link to="/">← Back to Home</Link>
 
-      <button
-        onClick={handleAddNewUser}
-        style={{ margin: "20px 0", padding: "10px 15px", cursor: "pointer" }}
-      >
-        Add New User
-      </button>
-
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <ul className={listStyles.list} style={{ marginTop: "1rem" }}>
         {users.map((user) => (
-          <li
-            key={user.id}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: "10px",
-              border: "1px solid #ccc",
-              padding: "15px",
-              borderRadius: "5px",
-            }}
-          >
-            <div>
+          <li key={user.id} className={listStyles.listItem}>
+            <div className={listStyles.itemContent}>
               <strong>{user.name}</strong> ({user.username})
               <br />
               <small>{user.email}</small>
@@ -143,11 +135,17 @@ const UserList: React.FC = () => {
             <div>
               <button
                 onClick={() => handleEditUser(user)}
+                className={btnStyles.btn}
                 style={{ marginRight: "10px" }}
               >
                 Edit
               </button>
-              <button onClick={() => handleDelete(user.id)}>Delete</button>
+              <button
+                onClick={() => handleDelete(user.id)}
+                className={`${btnStyles.btn} ${btnStyles.btnDanger}`}
+              >
+                Delete
+              </button>
             </div>
           </li>
         ))}

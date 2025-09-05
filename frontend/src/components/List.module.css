@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.listItem:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.itemContent {
+  flex-grow: 1;
+}
