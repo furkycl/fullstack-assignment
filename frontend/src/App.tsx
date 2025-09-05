@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import UserList from "./components/UserList";
 import PostList from "./components/PostList";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div>
+    <div className={styles.container}>
       {/* Rotalarımızı Routes bileşeni içinde tanımlıyoruz */}
       <Routes>
         {/* Ana sayfa için rota */}
