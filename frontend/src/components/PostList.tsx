@@ -138,7 +138,7 @@ const PostList: React.FC = () => {
         <PostForm
           currentPost={editingPost}
           onSave={handleSavePost}
-          onCancel={() => setIsModalOpen(false)}
+          onCancel={handleCancel}
         />
       )}
     </div>
