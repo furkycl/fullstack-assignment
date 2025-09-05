@@ -26,3 +26,21 @@ export const updateUser = async (id: number, user: User): Promise<User> => {
 export const deleteUser = async (id: number): Promise<void> => {
   await axios.delete(`${API_URL}/users/${id}`);
 };
+
+// CREATE: Yeni bir gönderi oluştur
+// body'i de ekleyelim, formda kullanacağız.
+export const createPost = async (post: Omit<Post, "id">): Promise<Post> => {
+  const response = await axios.post(`${API_URL}/posts`, post);
+  return response.data;
+};
+
+// UPDATE: Bir gönderiyi güncelle
+export const updatePost = async (id: number, post: Post): Promise<Post> => {
+  const response = await axios.put(`${API_URL}/posts/${id}`, post);
+  return response.data;
+};
+
+// DELETE: Bir gönderiyi sil
+export const deletePost = async (id: number): Promise<void> => {
+  await axios.delete(`${API_URL}/posts/${id}`);
+};
