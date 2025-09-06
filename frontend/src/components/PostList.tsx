@@ -107,7 +107,7 @@ const PostList: React.FC = () => {
       </div>
       <Link to="/">← Back to Home</Link>
 
-      <ul className={listStyles.list} style={{ marginTop: "1rem" }}>
+      <ul className={listStyles.list}>
         {posts.map((post) => (
           <li key={post.id} className={listStyles.listItem}>
             <div className={listStyles.itemContent}>

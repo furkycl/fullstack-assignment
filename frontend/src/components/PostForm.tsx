@@ -77,7 +77,6 @@ const PostForm: React.FC<PostFormProps> = ({
             value={formData.body}
             onChange={handleChange}
             required
-            style={{ minHeight: "80px" }}
           />
         </div>
 
