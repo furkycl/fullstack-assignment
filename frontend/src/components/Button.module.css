@@ -30,3 +30,7 @@
 .btnSecondary:hover {
   background-color: var(--secondary-hover-color);
 }
+
+.marginRight {
+  margin-right: 10px;
+}

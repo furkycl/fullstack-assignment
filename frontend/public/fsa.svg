@@ -1,0 +1,23 @@
+<!-- Full-Stack Neutral Icon (no Vite) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Full Stack Icon</title>
+  <desc id="desc">Frontend window, backend layers, and subtle bracket shapes</desc>
+  <g fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- subtle curly braces left/right -->
+    <path d="M36 76c-14 0-20 8-20 20v16c0 12-6 20-16 24c10 4 16 12 16 24v16c0 12 6 20 20 20" />
+    <path d="M220 76c14 0 20 8 20 20v16c0 12 6 20 16 24c-10 4-16 12-16 24v16c0 12-6 20-20 20" />
+    <!-- frontend window -->
+    <rect x="64" y="40" rx="12" ry="12" width="128" height="72"/>
+    <circle cx="80" cy="64" r="6"/>
+    <circle cx="100" cy="64" r="6"/>
+    <circle cx="120" cy="64" r="6"/>
+    <line x1="72" y1="92" x2="184" y2="92"/>
+    <!-- connection to backend -->
+    <path d="M128 112v16" />
+    <!-- backend layers -->
+    <path d="M56 160l72-24l72 24l-72 24z" fill="currentColor" fill-opacity="0.06"/>
+    <path d="M56 160l72-24l72 24l-72 24z"/>
+    <path d="M56 192l72-24l72 24l-72 24z" fill="currentColor" fill-opacity="0.06"/>
+    <path d="M56 192l72-24l72 24l-72 24z"/>
+  </g>
+</svg>

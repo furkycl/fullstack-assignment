@@ -53,9 +53,11 @@ const UserForm: React.FC<UserFormProps> = ({
         <h2>{currentUser ? "Edit User" : "Add New User"}</h2>
 
         <div className={formStyles.formGroup}>
-          <label>Name:</label>
+          {/* DEĞİŞİKLİK: htmlFor ve id eklendi */}
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
+            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -64,9 +66,10 @@ const UserForm: React.FC<UserFormProps> = ({
         </div>
 
         <div className={formStyles.formGroup}>
-          <label>Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
+            id="username"
             name="username"
             value={formData.username}
             onChange={handleChange}
@@ -75,9 +78,10 @@ const UserForm: React.FC<UserFormProps> = ({
         </div>
 
         <div className={formStyles.formGroup}>
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
+            id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -89,8 +93,7 @@ const UserForm: React.FC<UserFormProps> = ({
           <button
             type="button"
             onClick={onCancel}
-            className={btnStyles.btn}
-            style={{ marginRight: "10px" }}
+            className={`${btnStyles.btn} ${btnStyles.marginRight}`}
           >
             Cancel
           </button>

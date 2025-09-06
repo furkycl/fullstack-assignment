@@ -58,9 +58,10 @@ const PostForm: React.FC<PostFormProps> = ({
         <h2>{currentPost ? "Edit Post" : "Add New Post"}</h2>
 
         <div className={formStyles.formGroup}>
-          <label>Title:</label>
+          <label htmlFor="title">Title:</label>
           <input
             type="text"
+            id="title"
             name="title"
             value={formData.title}
             onChange={handleChange}
@@ -69,8 +70,9 @@ const PostForm: React.FC<PostFormProps> = ({
         </div>
 
         <div className={formStyles.formGroup}>
-          <label>Body:</label>
+          <label htmlFor="body">Body:</label>
           <textarea
+            id="body"
             name="body"
             value={formData.body}
             onChange={handleChange}
@@ -80,9 +82,10 @@ const PostForm: React.FC<PostFormProps> = ({
         </div>
 
         <div className={formStyles.formGroup}>
-          <label>User ID:</label>
+          <label htmlFor="userId">User ID:</label>
           <input
             type="number"
+            id="userId"
             name="userId"
             value={formData.userId}
             onChange={handleChange}
@@ -95,8 +98,7 @@ const PostForm: React.FC<PostFormProps> = ({
           <button
             type="button"
             onClick={onCancel}
-            className={btnStyles.btn}
-            style={{ marginRight: "10px" }}
+            className={`${btnStyles.btn} ${btnStyles.marginRight}`}
           >
             Cancel
           </button>
