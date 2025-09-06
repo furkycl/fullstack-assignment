@@ -22,3 +22,11 @@
 .btnDanger:hover {
   background-color: var(--danger-hover-color);
 }
+
+.btnSecondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.btnSecondary:hover {
+  background-color: var(--secondary-hover-color);
+}

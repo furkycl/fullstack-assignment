@@ -135,7 +135,7 @@ const UserList: React.FC = () => {
             <div>
               <button
                 onClick={() => handleEditUser(user)}
-                className={btnStyles.btn}
+                className={`${btnStyles.btn} ${btnStyles.btnSecondary}`}
                 style={{ marginRight: "10px" }}
               >
                 Edit

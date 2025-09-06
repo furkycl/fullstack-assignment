@@ -118,7 +118,7 @@ const PostList: React.FC = () => {
             <div>
               <button
                 onClick={() => handleEditPost(post)}
-                className={btnStyles.btn}
+                className={`${btnStyles.btn} ${btnStyles.btnSecondary}`}
                 style={{ marginRight: "10px" }}
               >
                 Edit

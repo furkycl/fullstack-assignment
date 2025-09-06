@@ -2,6 +2,9 @@
 :root {
   --primary-color: #007bff;
   --primary-hover-color: #0056b3;
+  --secondary-color: #6c757d;
+  --secondary-hover-color: #5a6268;
+  --background-color: #f8f9fa;
   --danger-color: #dc3545;
   --danger-hover-color: #c82333;
   --background-color: #f8f9fa;
