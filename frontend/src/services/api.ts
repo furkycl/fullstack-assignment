@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { User, Post } from "../types";
 
-const API_URL = "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 export const getUsers = async (): Promise<User[]> => {
   const response = await axios.get(`${API_URL}/users`);
