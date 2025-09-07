@@ -19,7 +19,7 @@ export const createUser = async (user: Omit<User, "id">): Promise<User> => {
 };
 
 export const updateUser = async (id: number, user: User): Promise<User> => {
-  const response = await axios.put(`${API_URL}/users/${id}`, user);
+  const response = await axios.patch(`${API_URL}/users/${id}`, user);
   return response.data;
 };
 
@@ -36,7 +36,7 @@ export const createPost = async (post: Omit<Post, "id">): Promise<Post> => {
 
 // UPDATE: Bir gönderiyi güncelle
 export const updatePost = async (id: number, post: Post): Promise<Post> => {
-  const response = await axios.put(`${API_URL}/posts/${id}`, post);
+  const response = await axios.patch(`${API_URL}/posts/${id}`, post);
   return response.data;
 };
 
