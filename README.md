@@ -4,8 +4,8 @@ This project is a complete full-stack application featuring a React frontend and
 
 ## ✨ Live Demo ✨
 
-- **Frontend (Vercel):** [https://your-frontend-project-name.vercel.app](https://your-frontend-project-name.vercel.app)
-- **Backend (Render):** [https://your-backend-project-name.onrender.com](https://your-backend-project-name.onrender.com)
+- **Frontend (Vercel):** [vercel-link-will-be-added after deployment](vercel-link-will-be-added after deployment)
+- **Backend (Render):** [backend-link will be add after deployment](backend-link will be add after deployment)
 
 ---
 
@@ -33,8 +33,10 @@ To run this project on your local machine, you need to run both the frontend and
 
 ### 1. Backend Setup
 
+First, set up and run the backend server.
+
 ```bash
-# Navigate to the backend directory
+# Navigate to the backend directory from the root
 cd backend
 
 # Install dependencies
@@ -42,4 +44,27 @@ npm install
 
 # Run the development server
 npm run start:dev
+The backend API will be available at http://localhost:3000.
+2. Frontend Setup
+Now, set up and run the frontend application.
+code
+Bash
+# Navigate to the frontend directory from the root
+cd frontend
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+The frontend application will be available at http://localhost:5173.
+Project Structure
+The repository is structured with two main folders for the frontend and backend applications.
+code
+Code
+/fullstack-assignment
+|-- /backend        # NestJS API
+|-- /frontend       # React Application
+|-- README.md       # You are here
+Each sub-project (frontend and backend) contains its own detailed README.md file with specific instructions and scripts.
 ```
