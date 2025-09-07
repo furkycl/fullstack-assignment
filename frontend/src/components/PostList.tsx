@@ -80,7 +80,7 @@ const PostList: React.FC = () => {
       } else {
         // CREATE
         const newPost = await createPost(formData);
-        newPost.id = Date.now(); // Yine sahte, geçici ID
+        // newPost.id = Date.now(); // Yine sahte, geçici ID
         setPosts((currentPosts) => [newPost, ...currentPosts]);
       }
     } catch {

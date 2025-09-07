@@ -91,7 +91,7 @@ const UserList: React.FC = () => {
         // Not: jsonplaceholder API'si her zaman aynı ID'yi döner.
         // Bu yüzden, frontend'de benzersiz olması için geçici bir ID atıyoruz.
         // Backend'e bağlandığımızda bu satıra gerek kalmayacak.
-        newUser.id = Date.now();
+        // newUser.id = Date.now();
 
         // State'i güncelle: Yeni kullanıcıyı listenin başına ekle.
         setUsers((currentUsers) => [newUser, ...currentUsers]);
