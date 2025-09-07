@@ -8,6 +8,13 @@ export interface User {
   email: string;
 }
 
+export interface UpdateUserDto {
+  // Güncelleme için DTO
+  name?: string;
+  username?: string;
+  email?: string;
+}
+
 // Yeni kullanıcı oluştururken frontend'den gelecek verinin tipini tanımlayalım (id'siz)
 export interface CreateUserDto {
   name: string;
@@ -61,5 +68,21 @@ export class UsersService {
     };
     this.users.push(newUser);
     return newUser;
+  }
+  update(id: number, userDto: UpdateUserDto): User {
+    const user = this.findOne(id); // Önce kullanıcıyı bul (yoksa hata fırlatır)
+    const userIndex = this.users.findIndex((u) => u.id === id);
+
+    const updatedUser = { ...user, ...userDto };
+    this.users[userIndex] = updatedUser;
+
+    return updatedUser;
+  }
+  delete(id: number): void {
+    const userIndex = this.users.findIndex((u) => u.id === id);
+    if (userIndex === -1) {
+      throw new NotFoundException(`User with ID ${id} not found`);
+    }
+    this.users.splice(userIndex, 1);
   }
 }
