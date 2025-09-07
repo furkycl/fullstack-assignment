@@ -5,7 +5,7 @@ This project is a complete full-stack application featuring a React frontend and
 ## ✨ Live Demo ✨
 
 - **Frontend (Vercel):** [vercel-link-will-be-added after deployment](vercel-link-will-be-added after deployment)
-- **Backend (Render):** [backend-link will be add after deployment](backend-link will be add after deployment)
+- **Backend (Render):** [https://fullstack-assignment-cfurkycl.onrender.com/](https://fullstack-assignment-cfurkycl.onrender.com/)
 
 ---
 
